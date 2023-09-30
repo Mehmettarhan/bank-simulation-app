@@ -11,7 +11,7 @@ public class AccountController {
 
     /*
         write a method to return index.html including account list information
-        endpoint:index
+        endpoint: index
      */
     private final AccountService accountService;
 
