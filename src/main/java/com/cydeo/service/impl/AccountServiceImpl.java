@@ -15,7 +15,7 @@ import java.util.UUID;
 @Component
 public class AccountServiceImpl implements AccountService {
 
-    AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
     public AccountServiceImpl(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
@@ -36,5 +36,4 @@ public class AccountServiceImpl implements AccountService {
     public List<Account> listAllAccount() {
         return accountRepository.findAll();
     }
-
 }
