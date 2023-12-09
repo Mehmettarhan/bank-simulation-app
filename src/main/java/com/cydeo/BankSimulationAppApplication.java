@@ -1,13 +1,13 @@
 package com.cydeo;
 
+import com.cydeo.dto.AccountDTO;
 import com.cydeo.enums.AccountType;
-import com.cydeo.model.Account;
 import com.cydeo.service.AccountService;
 import com.cydeo.service.TransactionService;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
@@ -23,12 +23,11 @@ public class BankSimulationAppApplication {
 		AccountService accountService = container.getBean(AccountService.class);
 		TransactionService transactionService = container.getBean(TransactionService.class);
 
-		//create 2 accounts sender and receiver
-		Account sender = accountService.createNewAccount(BigDecimal.valueOf(72), new Date(), AccountType.SAVING, 1L);
-		Account receiver = accountService.createNewAccount(BigDecimal.valueOf(21), new Date(), AccountType.CHECKING, 2L);
-		Account receiver3 = accountService.createNewAccount(BigDecimal.valueOf(34), new Date(), AccountType.SAVING, 12L);
-		Account receiver2 = accountService.createNewAccount(BigDecimal.valueOf(5000), new Date(), AccountType.CHECKING, 123L);
-		Account receiver4 = accountService.createNewAccount(BigDecimal.valueOf(7500), new Date(), AccountType.SAVING, 124L);
+//        create 2 accounts sender and receiver
+//        AccountDTO sender = accountService.createNewAccount(BigDecimal.valueOf(70), new Date(), AccountType.SAVING, 1L);
+//        AccountDTO receiver = accountService.createNewAccount(BigDecimal.valueOf(50), new Date(), AccountType.CHECKING, 2L);
+//        Account receiver2 = accountService.createNewAccount(BigDecimal.valueOf(5000), new Date(), AccountType.CHECKING, 123L);
+//        Account receiver3 = accountService.createNewAccount(BigDecimal.valueOf(7500), new Date(), AccountType.SAVING, 124L);
 //        Account receiver2=null;
 //
 //        accountService.listAllAccount().forEach(System.out::println);
@@ -39,5 +38,12 @@ public class BankSimulationAppApplication {
 //
 //        accountService.listAllAccount().forEach(System.out::println);
 	}
+
+	@Bean
+	public ModelMapper modelMapper(){
+		return new ModelMapper();
+	}
+
+
 
 }
